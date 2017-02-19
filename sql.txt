@@ -1,0 +1,55 @@
+drop table item;
+drop table stock;
+drop table dealing;
+drop table evaluation;
+
+create table item(
+   id INT NOT NULL AUTO_INCREMENT,
+   name VARCHAR(100) NOT NULL,
+   price FLOAT NOT NULL,
+   stockprice FLOAT NOT NULL,
+   category VARCHAR(100) NOT NULL,
+   location VARCHAR(100) NOT NULL,
+   amount INT NOT NULL,
+   PRIMARY KEY (id)
+);
+
+create table stock(
+   id INT NOT NULL AUTO_INCREMENT,
+   item VARCHAR(100) NOT NULL,
+   amount INT NOT NULL,
+   stockdate DATETIME, 
+   PRIMARY KEY (id)
+);
+
+create table dealing(
+   id INT NOT NULL AUTO_INCREMENT,
+   bill VARCHAR(255),
+   total FLOAT NOT NULL,
+   stockdate DATETIME,
+   PRIMARY KEY (id)
+);
+
+create table evaluation(
+   id INT NOT NULL AUTO_INCREMENT,
+   item VARCHAR(100) NOT NULL,
+   isgood BOOL NOT NULL,
+   eval TEXT,
+   PRIMARY KEY (id)
+);
+
+
+insert into item(name,price,stockprice,category,location,amount) values("apple",1,0.5,"fruit","A1",100);
+insert into item(name,price,stockprice,category,location,amount) values("banana",1,0.5,"fruit","A1",100);
+insert into item(name,price,stockprice,category,location,amount) values("peach",1,0.5,"fruit","A1",100);
+insert into item(name,price,stockprice,category,location,amount) values("bread",1,0.5,"food","A2",100);
+insert into item(name,price,stockprice,category,location,amount) values("noodles",1,0.5,"food","A2",100);
+insert into item(name,price,stockprice,category,location,amount) values("skirt",5,3.5,"clothes","A3",100);
+insert into item(name,price,stockprice,category,location,amount) values("T-shirt",7,4.5,"clothes","A3",7);
+insert into item(name,price,stockprice,category,location,amount) values("cola",1,0.5,"drinks","A4",100);
+insert into item(name,price,stockprice,category,location,amount) values("Sprite",1,0.5,"drinks","A4",100);
+insert into item(name,price,stockprice,category,location,amount) values("gloves",10,6,"sports","A5",10);
+insert into item(name,price,stockprice,category,location,amount) values("baseball",10,6,"sports","A5",10);
+insert into item(name,price,stockprice,category,location,amount) values("orange",1,0.5,"fruit","A1",100);
+insert into item(name,price,stockprice,category,location,amount) values("litchi",1,0.5,"fruit","A1",100);
+insert into item(name,price,stockprice,category,location,amount) values("grapes",1,0.5,"fruit","A1",100);
